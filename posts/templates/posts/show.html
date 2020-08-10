@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>상세보기 페이지</h1>
+<h3>상품명 : {{ post.title }} </h3><br>
+<h3>가격 : {{ post.price }} </h3><br>
+<h3>재고 : {{ post.surplus }} </h3><br>
+<h3>상품 설명 : {{ post.content }} </h3><br>
+<h3>작성 시각 : {{ post.created_at }} </h3><br>
+<h3>수정 시각 : {{ post.updated_at }} </h3><br>
+<a href = "{% url 'posts:update' post.pk %}">수정</a>
+{% endblock %}

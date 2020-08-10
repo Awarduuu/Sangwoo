@@ -9,29 +9,19 @@
   </div>
   <div class="card-deck">
     <div class="card">
-        <a href = "/shop"><img src="{% static 'images/shop.png' %}" class="card-img-top"></a>
+        <a href = "/posts"><img src="{% static 'images/shop.png' %}" class="card-img-top"></a>
         <div class="card-body">
-          <h5 class="card-title">쇼핑하기</h5>
+          <h5 class="card-title">상품 목록 바로가기</h5>
           <p class="card-text"></p>
         </div>
     </div>
     <div class="card">
-        <img src="{% static 'images/shop.png' %}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">게시글 작성하기</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Detail</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="{% static 'images/shop.png' %}" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">구경하기
-          </h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Detail</a>
-        </div>
-    </div>
+      <a href = "{% url 'posts:new' %}"><img src="{% static 'images/shop.png' %}" class="card-img-top"></a>
+      <div class="card-body">
+        <h5 class="card-title">상품 등록하기</h5>
+        <p class="card-text"></p>
+      </div>
+  </div>
   </div>
 
 {% endblock %}
