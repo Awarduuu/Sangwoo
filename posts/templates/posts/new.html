@@ -5,7 +5,7 @@
     <h1>
         상품 등록하기
     </h1>
-    <form action="{% url 'posts:create' %}" method="POST">
+    <form action="{% url 'posts:create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <label>상품명</label>
@@ -19,6 +19,7 @@
             <label>가격</label>
             <textarea class="form-control" name="price"></textarea>
         </div>
+        <input type="file", name="image">
         <input type="submit" value="제출" class="btn btn-outline-primary">
     </form>
 </div>
