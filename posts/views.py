@@ -8,18 +8,19 @@ def create(request) :
     if request.method == "POST":
         title = request.POST.get('title')
         content = request.POST.get('content')
+        price = request.POST.get('price')
         image = request.FILES.get('image')
         user = request.user
-        Post.objects.create(title=title, content=content, image=image)
+        Post.objects.create(title=title, content=content, price=price, image=image)
         return redirect('posts:main')
 
 def main(request) :
     posts = Post.objects.all()
-    return render(request, 'posts/main.html', {"posts": posts})
+    return render(request, 'posts/main.html', {'posts': posts})
 
 def show(request, id) :
     post = Post.objects.get(pk=id)
-    return render(request, 'posts/show.html', {"post": post})
+    return render(request, 'posts/show.html', {'post': post})
 
 def update(request, id) :
     post = get_object_or_404(Post, pk=id)
@@ -27,6 +28,7 @@ def update(request, id) :
         post.title = request.POST['title']
         post.content = request.POST['content']
         post.image = request.FILES.get('image')
+        post.price = request.POST['price']
         post.save()
         return redirect('posts:show', post.id)
     return render(request, 'posts/update.html', {"post":post})

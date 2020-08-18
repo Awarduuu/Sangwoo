@@ -1,17 +1,5 @@
 {% load static %}
 {% block content %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>S-mall</title>
-  </head>
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">S-mall</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +25,8 @@
               <a class="dropdown-item" href="{% url 'account_logout' %}" class="navlink">Logout</a>
               <a class="dropdown-item" href="{% url 'account_change_password' %}">Change PW</a>
             {% else %}
-              <a class="dropdown-item" href="{% url 'account_login' %}" class="navlink">Login</a>                <a class="dropdown-item" href="{% url 'account_signup' %}" class="navlink">Sign Up</a>
+              <a class="dropdown-item" href="{% url 'account_login' %}" class="navlink">Login</a>                
+              <a class="dropdown-item" href="{% url 'account_signup' %}" class="navlink">Sign Up</a>
             {% endif %}
           </div>
         </li>
