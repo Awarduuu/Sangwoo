@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% if user.is_authenticated %}
 <div class="container">
     <h1>
         상품 등록하기
@@ -23,4 +24,9 @@
         <input type="submit" value="제출" class="btn btn-outline-primary">
     </form>
 </div>
+{% else %}
+<h3>로그인 후 이용이 가능합니다.</h3>
+<a href = "{% url 'account_login' %}" class="btn btn-warning">로그인</a>
+<a href = "{% url 'account_signup' %}" class="btn btn-warning">회원가입</a>
+{% endif %}
 {% endblock %}

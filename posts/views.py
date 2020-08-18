@@ -11,7 +11,7 @@ def create(request) :
         price = request.POST.get('price')
         image = request.FILES.get('image')
         user = request.user
-        Post.objects.create(title=title, content=content, price=price, image=image)
+        Post.objects.create(title=title, content=content, price=price, image=image, user=user)
         return redirect('posts:main')
 
 def main(request) :

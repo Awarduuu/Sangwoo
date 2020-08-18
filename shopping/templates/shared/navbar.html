@@ -1,36 +1,36 @@
 {% load static %}
 {% block content %}
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">S-mall</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'posts:main' %}">shopping list</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'posts:new' %}">upload</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" datatoggle="dropdown" href="#" role="button" aria-haspopup="true" ariaexpanded="false">Account</a>
-          <div class="dropdown-menu">
-            {% if user.is_authenticated %} 
-              <a class="dropdown-item" href="{% url 'account_logout' %}" class="navlink">Logout</a>
-              <a class="dropdown-item" href="{% url 'account_change_password' %}">Change PW</a>
-            {% else %}
-              <a class="dropdown-item" href="{% url 'account_login' %}" class="navlink">Login</a>                
-              <a class="dropdown-item" href="{% url 'account_signup' %}" class="navlink">Sign Up</a>
-            {% endif %}
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">S-mall</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'posts:main' %}">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'posts:new' %}">Upload</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+        <div class="dropdown-menu">
+          {% if user.is_authenticated %} {# 유저가 로그인 중이면 #}
+            <a class="dropdown-item" href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+            <a class="dropdown-item" href="{% url 'account_change_password' %}">Change PW</a>
+          {% else %}
+            <a class="dropdown-item" href="{% url 'account_login' %}" class="nav-link">Login</a>
+            <a class="dropdown-item" href="{% url 'account_signup' %}" class="nav-link">Sign Up</a>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 {% endblock %}
